@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata">
+  <label>Contact - Email</label>
+  <protected>false</protected>
+  <values>
+    <field>ObjectApiName__c</field>
+    <value>Contact</value>
+  </values>
+  <values>
+    <field>FieldApiName__c</field>
+    <value>Email</value>
+  </values>
+  <values>
+    <field>Severity__c</field>
+    <value>High</value>
+  </values>
+  <values>
+    <field>Notes__c</field>
+    <value>PII field. Avoid broad edit access.</value>
+  </values>
+</CustomMetadata>

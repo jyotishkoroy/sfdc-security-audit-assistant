@@ -1,0 +1,7 @@
+:host {
+    --saa-max-height: 42rem;
+}
+
+lightning-datatable {
+    max-height: var(--saa-max-height);
+}

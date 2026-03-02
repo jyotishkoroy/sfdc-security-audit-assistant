@@ -1,0 +1,18 @@
+{
+  "name": "sfdc-security-audit-assistant",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Security Audit Assistant for Salesforce: CRUD/FLS effective access scan + sharing sanity checks.",
+  "scripts": {
+    "test:unit": "sfdx-lwc-jest",
+    "lint": "eslint force-app/main/default/lwc --ext .js",
+    "format": "prettier --write \"force-app/main/default/lwc/**/*\" \"docs/**/*\" \"README.md\"",
+    "ci": "npm run lint && npm run test:unit"
+  },
+  "devDependencies": {
+    "@salesforce/eslint-config-lwc": "^3.7.2",
+    "@salesforce/sfdx-lwc-jest": "^6.4.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3"
+  }
+}

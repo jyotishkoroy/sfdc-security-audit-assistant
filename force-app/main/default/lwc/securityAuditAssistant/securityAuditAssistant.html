@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Security Audit Assistant" icon-name="utility:shield">
+        <div class="slds-p-horizontal_small slds-p-vertical_small">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-combobox
+                        name="object"
+                        label="Object"
+                        value={objectApiName}
+                        options={objectOptions}
+                        onchange={handleObjectChange}
+                        placeholder="Select an object"
+                    ></lightning-combobox>
+                </div>
+
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-dual-listbox
+                        name="fields"
+                        label="Fields (optional)"
+                        source-label="Available"
+                        selected-label="Selected"
+                        options={fieldOptions}
+                        value={fieldApiNames}
+                        onchange={handleFieldChange}
+                        disable-reordering
+                    ></lightning-dual-listbox>
+                </div>
+            </div>
+
+            <div class="slds-m-top_small slds-grid slds-grid_align-spread">
+                <div>
+                    <lightning-button variant="brand" label="Run Scan" onclick={runScan} disabled={runDisabled}></lightning-button>
+                    <lightning-button class="slds-m-left_x-small" label="Export CSV" onclick={exportCsv} disabled={exportDisabled}></lightning-button>
+                </div>
+                <div class="slds-text-body_small slds-text-color_weak">
+                    {statusText}
+                </div>
+            </div>
+
+            <template if:true={isLoading}>
+                <div class="slds-m-top_small">
+                    <lightning-spinner size="small"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={findings}>
+                <div class="slds-m-top_small">
+                    <lightning-datatable
+                        key-field="key"
+                        data={findings}
+                        columns={columns}
+                        hide-checkbox-column
+                        show-row-number-column
+                    ></lightning-datatable>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-m-top_small slds-text-color_error">
+                    {error}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

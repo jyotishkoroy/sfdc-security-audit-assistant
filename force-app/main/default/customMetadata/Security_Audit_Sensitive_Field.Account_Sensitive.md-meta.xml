@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata">
+  <label>Account - Sensitive</label>
+  <protected>false</protected>
+  <values>
+    <field>ObjectApiName__c</field>
+    <value>Account</value>
+  </values>
+  <values>
+    <field>FieldApiName__c</field>
+    <value></value>
+  </values>
+  <values>
+    <field>Severity__c</field>
+    <value>High</value>
+  </values>
+  <values>
+    <field>Notes__c</field>
+    <value>Customer master data. Tighten sharing and restrict delete.</value>
+  </values>
+</CustomMetadata>
